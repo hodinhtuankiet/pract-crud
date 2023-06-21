@@ -1,0 +1,33 @@
+h1 {
+  color: yellow; }
+
+.card-course-item {
+  margin-top: 16px; }
+
+button {
+  width: 130px;
+  height: 50px;
+  color: white;
+  background-color: red;
+  border: 1px solid transparent;
+  border-radius: 5px; }
+
+button:hover {
+  background-color: #a43f3f;
+  cursor: pointer; }
+
+.main {
+  background-color: #2e2a2a;
+  width: 100%; }
+
+.btn {
+  color: orange; }
+
+.mt-4 {
+  color: white; }
+
+.modal-body {
+  color: black; }
+
+.modal-title {
+  color: red; }

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Contact</a>
+        </nav>
+        <form action="#" class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">
+                <i class='bx bx-search'></i>
+            </button>
+        </form>
+    </header>
+    <div class="background"></div>
+    <div class="container">
+        <div class="content">
+            <h2 class="ten"><i class='bx bxl-firefox'></i> DinhTuanKiet</h2>
+            <div class="text-sci">
+                <h2>Welcome <br> <span>To Our Website Coffee.</span> </h2>
+                <p>Whether you're in the mood for a classic latte or something
+                    more unique like a lavender honey cappuccino, we have a drink to suit your taste</p>
+                <div class="social-icons">
+                    <a href=""><i class='bx bxl-linkedin-square'></i></a>
+                    <a href=""><i class='bx bxl-facebook-square'></i></a>
+                    <a href=""><i class='bx bxl-instagram-alt'></i></a>
+                    <a href=""><i class='bx bxl-gmail'></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Form login -->
+        <div class="logreg-box">
+            <div class="form-box login">
+                <form action="#">
+                    <h2>Log In</h2>
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class='bx bxl-gmail'></i>
+                        </span>
+                        <input id="email" type="email" required>
+                        <label for="">Email</label>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class='bx bxs-lock-alt'></i>
+                        </span>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox">Remember me</label>
+                        <a href="#">Forgot Password</a>
+                    </div>
+
+                    <button type="submit">Log In</button>
+
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="login-link">Log In</a> </p>
+                    </div>
+                </form>
+            </div>
+            <!-- registist -->
+            <div class="form-box register">
+                <form action="#">
+                    <h2>Sign Up</h2>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class='bx bxs-user'></i>
+                        </span>
+                        <input type="text" required>
+                        <label for="">Name</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class='bx bxl-gmail'></i>
+                        </span>
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <i class='bx bxs-lock-alt'></i>
+                        </span>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label> <input type="checkbox">I agree to the term & conditions</label>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="Register-link">Sign In</a> </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="./validate.js"></script>
+    <script>
+        Validator({
+            form: '#form-box',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.isPassword('#password'),
+                Validator.isConfirmPassword('#password_confirmation')
+            ]
+        });
+    </script>
+</body>
+
+</html>

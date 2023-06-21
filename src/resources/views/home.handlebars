@@ -1,0 +1,29 @@
+{{!-- <div class="background"> --}}
+    <div class="mt-4">
+        <div class="row">
+            {{#each courses}}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card card-course-item">
+                    <a href="/coffee/{{this.slug}}">
+                        <img class=" card-img-top" src="{{this.image}}" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                        <a href="/coffee/{{this.slug}}">
+                            <h5 class="card-title">{{this.Name}}</h5>
+                        </a>
+                        <p class="card-text">
+                            Customer: {{this.Number}} <br>
+                            Quantity: {{this.Quantity}} <br>
+                            Note: {{this.Note}}</p>
+                        Create At: {{this.createdAt}} <br> <br>
+                        <a href="#" class="btn btn-primary">Tính tiền</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+
+        </div>
+    </div>
+    {{!--
+</div> --}}

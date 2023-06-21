@@ -1,0 +1,82 @@
+<div class="mt-4">
+    <h3>Danh Sách Coffee Của Tôi</h3>
+    <table class="table mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name Customer</th>
+                <th scope="col">Orders</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Note</th>
+                <th scope="col">Create At</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each course}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.Number}}</td>
+                <td>{{this.Name}}</td>
+                <td>{{this.Quantity}}</td>
+                <td>{{this.Note}}</td>
+                <td>{{this.CreateAt}}</td>
+                <td>
+                    <a href="/coffee/{{this._id}}/edit" class="btn btn-link">Sửa</a>
+                    <a href="button" class="btn btn-link" data-id="{{this._id}}" data-toggle="modal"
+                        data-target="#exampleModal">Xóa</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+
+    </table>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Bạn có muốn xóa khách hàng này không ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                    <button id="btn-delete-coffee" type="button" class="btn btn-danger">Xóa khách hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Delete hidden Form --}}
+<form name="delete-coffee-form" method="POST">
+</form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var coffeeId;
+
+        var deleteForm = document.forms['delete-coffee-form'];
+
+        var btnDelete = document.getElementById('btn-delete-coffee');
+
+        //When dialog confirm clicked  
+
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            coffeeId = button.data('id') // Extract info from data-* attributes
+        })
+        btnDelete.onclick = function () {
+            deleteForm.action = '/coffee/' + coffeeId + '?_method=DELETE';
+            deleteForm.submit();
+        }
+    })
+</script>
